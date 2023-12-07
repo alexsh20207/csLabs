@@ -19,12 +19,12 @@ public class ApplicationContext : DbContext
     {
         if (dbName == DbName.PostgreSQL)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=1111;Database=csDB;Username=postgres;Password=postgres");
+            optionsBuilder.UseNpgsql(Consts.DB_INFO);
         }
 
         else if (dbName == DbName.LocalSQL)
         {
-            optionsBuilder.UseInMemoryDatabase("csDB");
+            optionsBuilder.UseInMemoryDatabase(Consts.DB_NAME);
         }
     }
 }
